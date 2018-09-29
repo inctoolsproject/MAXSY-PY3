@@ -755,7 +755,31 @@ def bot(op):
                                     if op.param3 not in wait["blacklist"]:
                                         cl.kickoutFromGroup(op.param1,[op.param2])
                                 except:
-                                    pass
+                                    try:
+                                        if op.param3 not in wait["blacklist"]:
+                                            kb.kickoutFromGroup(op.param1,[op.param2])
+                                    except:
+                                        try:
+                                            if op.param3 not in wait["blacklist"]:
+                                                kd.kickoutFromGroup(op.param1,[op.param2])
+                                        except:
+                                            try:
+                                                if op.param3 not in wait["blacklist"]:
+                                                    ke.kickoutFromGroup(op.param1,[op.param2])
+                                            except:
+                                                try:
+                                                    if op.param3 not in wait["blacklist"]:
+                                                        kf.kickoutFromGroup(op.param1,[op.param2])
+                                                except:
+                                                    try:
+                                                        if op.param3 not in wait["blacklist"]:
+                                                            kg.kickoutFromGroup(op.param1,[op.param2])
+                                                    except:
+                                                        try:
+                                                            if op.param3 not in wait["blacklist"]:
+                                                                kh.kickoutFromGroup(op.param1,[op.param2])
+                                                        except:
+                                                            pass
                 return
 
         if op.type == 0:
@@ -859,17 +883,29 @@ def bot(op):
                             except:
                                 try:
                                     if op.param3 not in wait["blacklist"]:
-                                        ki.kickoutFromGroup(op.param1,[op.param2])
+                                        kb.kickoutFromGroup(op.param1,[op.param2])
                                 except:
                                     try:
                                         if op.param3 not in wait["blacklist"]:
-                                            kk.kickoutFromGroup(op.param1,[op.param2])
+                                            kd.kickoutFromGroup(op.param1,[op.param2])
                                     except:
                                         try:
                                             if op.param3 not in wait["blacklist"]:
-                                                cl.kickoutFromGroup(op.param1,[op.param2])
+                                                ke.kickoutFromGroup(op.param1,[op.param2])
                                         except:
-                                            pass
+                                            try:
+                                                if op.param3 not in wait["blacklist"]:
+                                                    kf.kickoutFromGroup(op.param1,[op.param2])
+                                            except:
+                                                try:
+                                                    if op.param3 not in wait["blacklist"]:
+                                                        kg.kickoutFromGroup(op.param1,[op.param2])
+                                                except:
+                                                    try:
+                                                        if op.param3 not in wait["blacklist"]:
+                                                            kh.kickoutFromGroup(op.param1,[op.param2])
+                                                    except:
+                                                        pass
                 return
 
         if op.type == 19:
@@ -939,7 +975,37 @@ def bot(op):
                                                         kk.inviteIntoGroup(op.param1,[op.param3])
                                                         cl.acceptGroupInvitation(op.param1)
                                                     except:
-                                                        pass
+                                                        try:
+                                                            kb.kickoutFromGroup(op.param1,[op.param2])
+                                                            kh.inviteIntoGroup(op.param1,[op.param3])
+                                                            cl.acceptGroupInvitation(op.param1)
+                                                        except:
+                                                            try:
+                                                                kd.kickoutFromGroup(op.param1,[op.param2])
+                                                                kg.inviteIntoGroup(op.param1,[op.param3])
+                                                                cl.acceptGroupInvitation(op.param1)
+                                                            except:
+                                                                try:
+                                                                    ke.kickoutFromGroup(op.param1,[op.param2])
+                                                                    kf.inviteIntoGroup(op.param1,[op.param3])
+                                                                    cl.acceptGroupInvitation(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        kf.kickoutFromGroup(op.param1,[op.param2])
+                                                                        kb.inviteIntoGroup(op.param1,[op.param3])
+                                                                        cl.acceptGroupInvitation(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            kg.kickoutFromGroup(op.param1,[op.param2])
+                                                                            ke.inviteIntoGroup(op.param1,[op.param3])
+                                                                            cl.acceptGroupInvitation(op.param1)
+                                                                        except:
+                                                                            try:
+                                                                                kh.kickoutFromGroup(op.param1,[op.param2])
+                                                                                kg.inviteIntoGroup(op.param1,[op.param3])
+                                                                                cl.acceptGroupInvitation(op.param1)
+                                                                            except:
+                                                                                pass
                 return
 
             if Amid in op.param3:
