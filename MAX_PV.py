@@ -717,7 +717,43 @@ def bot(op):
                                     for _mid in gMembMids:
                                         kc.cancelGroupInvitation(op.param1,[_mid])
                                 except:
-                                    pass
+                                    try:
+                                        group = kb.getGroup(op.param1)
+                                        gMembMids = [contact.mid for contact in group.invitee]
+                                        for _mid in gMembMids:
+                                            kb.cancelGroupInvitation(op.param1,[_mid])
+                                    except:
+                                        try:
+                                            group = kd.getGroup(op.param1)
+                                            gMembMids = [contact.mid for contact in group.invitee]
+                                            for _mid in gMembMids:
+                                                kd.cancelGroupInvitation(op.param1,[_mid])
+                                        except:
+                                            try:
+                                                group = ke.getGroup(op.param1)
+                                                gMembMids = [contact.mid for contact in group.invitee]
+                                                for _mid in gMembMids:
+                                                    ke.cancelGroupInvitation(op.param1,[_mid])
+                                            except:
+                                                try:
+                                                    group = kf.getGroup(op.param1)
+                                                    gMembMids = [contact.mid for contact in group.invitee]
+                                                    for _mid in gMembMids:
+                                                        kf.cancelGroupInvitation(op.param1,[_mid])
+                                                except:
+                                                    try:
+                                                        group = kg.getGroup(op.param1)
+                                                        gMembMids = [contact.mid for contact in group.invitee]
+                                                        for _mid in gMembMids:
+                                                            kg.cancelGroupInvitation(op.param1,[_mid])
+                                                    except:
+                                                        try:
+                                                            group = kh.getGroup(op.param1)
+                                                            gMembMids = [contact.mid for contact in group.invitee]
+                                                            for _mid in gMembMids:
+                                                                kh.cancelGroupInvitation(op.param1,[_mid])
+                                                        except:
+                                                            pass
 
         if op.type == 17:
             if op.param2 in wait["blacklist"]:
@@ -1990,7 +2026,47 @@ def bot(op):
                                 kk.findAndAddContactsByMid(op.param1,admin)
                                 kk.inviteIntoGroup(op.param1,admin)
                             except:
-                                pass
+                                try:
+                                    kc.kickoutFromGroup(op.param1,[op.param2])
+                                    kc.findAndAddContactsByMid(op.param1,admin)
+                                    kc.inviteIntoGroup(op.param1,admin)
+                                except:
+                                    try:
+                                        kb.kickoutFromGroup(op.param1,[op.param2])
+                                        kb.findAndAddContactsByMid(op.param1,admin)
+                                        kb.inviteIntoGroup(op.param1,admin)
+                                    except:
+                                        try:
+                                            kd.kickoutFromGroup(op.param1,[op.param2])
+                                            kd.findAndAddContactsByMid(op.param1,admin)
+                                            kd.inviteIntoGroup(op.param1,admin)
+                                        except:
+                                            try:
+                                                kd.kickoutFromGroup(op.param1,[op.param2])
+                                                kd.findAndAddContactsByMid(op.param1,admin)
+                                                kd.inviteIntoGroup(op.param1,admin)
+                                            except:
+                                                try:
+                                                    ke.kickoutFromGroup(op.param1,[op.param2])
+                                                    ke.findAndAddContactsByMid(op.param1,admin)
+                                                    ke.inviteIntoGroup(op.param1,admin)
+                                                except:
+                                                    try:
+                                                        kf.kickoutFromGroup(op.param1,[op.param2])
+                                                        kf.findAndAddContactsByMid(op.param1,admin)
+                                                        kf.inviteIntoGroup(op.param1,admin)
+                                                    except:
+                                                        try:
+                                                            kg.kickoutFromGroup(op.param1,[op.param2])
+                                                            kg.findAndAddContactsByMid(op.param1,admin)
+                                                            kg.inviteIntoGroup(op.param1,admin)
+                                                        except:
+                                                            try:
+                                                                kh.kickoutFromGroup(op.param1,[op.param2])
+                                                                kh.findAndAddContactsByMid(op.param1,admin)
+                                                                kh.inviteIntoGroup(op.param1,admin)
+                                                            except:
+                                                                pass
 
                 return
 
