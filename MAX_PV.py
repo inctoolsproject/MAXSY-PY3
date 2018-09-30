@@ -2096,7 +2096,47 @@ def bot(op):
                                 kc.findAndAddContactsByMid(op.param1,staff)
                                 kc.inviteIntoGroup(op.param1,staff)
                             except:
-                                pass
+                                try:
+                                    cl.kickoutFromGroup(op.param1,[op.param2])
+                                    cl.findAndAddContactsByMid(op.param1,admin)
+                                    cl.inviteIntoGroup(op.param1,admin)
+                                except:
+                                    try:
+                                        kb.kickoutFromGroup(op.param1,[op.param2])
+                                        kb.findAndAddContactsByMid(op.param1,admin)
+                                        kb.inviteIntoGroup(op.param1,admin)
+                                    except:
+                                        try:
+                                            kd.kickoutFromGroup(op.param1,[op.param2])
+                                            kd.findAndAddContactsByMid(op.param1,admin)
+                                            kd.inviteIntoGroup(op.param1,admin)
+                                        except:
+                                            try:
+                                                kd.kickoutFromGroup(op.param1,[op.param2])
+                                                kd.findAndAddContactsByMid(op.param1,admin)
+                                                kd.inviteIntoGroup(op.param1,admin)
+                                            except:
+                                                try:
+                                                    ke.kickoutFromGroup(op.param1,[op.param2])
+                                                    ke.findAndAddContactsByMid(op.param1,admin)
+                                                    ke.inviteIntoGroup(op.param1,admin)
+                                                except:
+                                                    try:
+                                                        kf.kickoutFromGroup(op.param1,[op.param2])
+                                                        kf.findAndAddContactsByMid(op.param1,admin)
+                                                        kf.inviteIntoGroup(op.param1,admin)
+                                                    except:
+                                                        try:
+                                                            kg.kickoutFromGroup(op.param1,[op.param2])
+                                                            kg.findAndAddContactsByMid(op.param1,admin)
+                                                            kg.inviteIntoGroup(op.param1,admin)
+                                                        except:
+                                                            try:
+                                                                kh.kickoutFromGroup(op.param1,[op.param2])
+                                                                kh.findAndAddContactsByMid(op.param1,admin)
+                                                                kh.inviteIntoGroup(op.param1,admin)
+                                                            except:
+                                                                pass
 
                 return
 
@@ -2337,6 +2377,36 @@ def bot(op):
                             del Setmain["ARfoto"][Cmid]
                             kc.updateProfilePicture(path)
                             kc.sendMessage(msg.to,"Foto berhasil dirubah")
+                        elif Dmid in Setmain["ARfoto"]:
+                            path = kb.downloadObjectMsg(msg_id)
+                            del Setmain["ARfoto"][Zmid]
+                            kb.updateProfilePicture(path)
+                            kb.sendMessage(msg.to,"Foto berhasil dirubah")
+                        elif Emid in Setmain["ARfoto"]:
+                            path = kd.downloadObjectMsg(msg_id)
+                            del Setmain["ARfoto"][Bmid]
+                            kd.updateProfilePicture(path)
+                            kd.sendMessage(msg.to,"Foto berhasil dirubah")
+                        elif Fmid in Setmain["ARfoto"]:
+                            path = ke.downloadObjectMsg(msg_id)
+                            del Setmain["ARfoto"][Cmid]
+                            ke.updateProfilePicture(path)
+                            ke.sendMessage(msg.to,"Foto berhasil dirubah")
+                        elif Gmid in Setmain["ARfoto"]:
+                            path = kf.downloadObjectMsg(msg_id)
+                            del Setmain["ARfoto"][Zmid]
+                            kf.updateProfilePicture(path)
+                            kf.sendMessage(msg.to,"Foto berhasil dirubah")
+                        elif Hmid in Setmain["ARfoto"]:
+                            path = kg.downloadObjectMsg(msg_id)
+                            del Setmain["ARfoto"][Bmid]
+                            kg.updateProfilePicture(path)
+                            kg.sendMessage(msg.to,"Foto berhasil dirubah")
+                        elif Imid in Setmain["ARfoto"]:
+                            path = kh.downloadObjectMsg(msg_id)
+                            del Setmain["ARfoto"][Cmid]
+                            kh.updateProfilePicture(path)
+                            kh.sendMessage(msg.to,"Foto berhasil dirubah")
                         elif Zmid in Setmain["ARfoto"]:
                             path = sw.downloadObjectMsg(msg_id)
                             del Setmain["ARfoto"][Zmid]
@@ -2349,6 +2419,12 @@ def bot(op):
                      path1 = ki.downloadObjectMsg(msg_id)
                      path2 = kk.downloadObjectMsg(msg_id)
                      path3 = kc.downloadObjectMsg(msg_id)
+                     path1 = kb.downloadObjectMsg(msg_id)
+                     path2 = kd.downloadObjectMsg(msg_id)
+                     path3 = ke.downloadObjectMsg(msg_id)
+                     path1 = kf.downloadObjectMsg(msg_id)
+                     path2 = kg.downloadObjectMsg(msg_id)
+                     path3 = kh.downloadObjectMsg(msg_id)
                      settings["changePicture"] = False
                      ki.updateProfilePicture(path1)
                      ki.sendMessage(msg.to, "Berhasil mengubah foto profile bot")
@@ -2356,12 +2432,30 @@ def bot(op):
                      kk.sendMessage(msg.to, "Berhasil mengubah foto profile bot")
                      kc.updateProfilePicture(path3)
                      kc.sendMessage(msg.to, "Berhasil mengubah foto profile bot")
+                     kb.updateProfilePicture(path1)
+                     kb.sendMessage(msg.to, "Berhasil mengubah foto profile bot")
+                     kd.updateProfilePicture(path2)
+                     kd.sendMessage(msg.to, "Berhasil mengubah foto profile bot")
+                     ke.updateProfilePicture(path3)
+                     ke.sendMessage(msg.to, "Berhasil mengubah foto profile bot")
+                     kf.updateProfilePicture(path1)
+                     kf.sendMessage(msg.to, "Berhasil mengubah foto profile bot")
+                     kg.updateProfilePicture(path2)
+                     kg.sendMessage(msg.to, "Berhasil mengubah foto profile bot")
+                     kh.updateProfilePicture(path3)
+                     kh.sendMessage(msg.to, "Berhasil mengubah foto profile bot")
 
                if msg.contentType == 0:
                     if Setmain["autoRead"] == True:
                         ki.sendChatChecked(msg.to, msg_id)
                         kk.sendChatChecked(msg.to, msg_id)
                         kc.sendChatChecked(msg.to, msg_id)
+                        kb.sendChatChecked(msg.to, msg_id)
+                        kd.sendChatChecked(msg.to, msg_id)
+                        ke.sendChatChecked(msg.to, msg_id)
+                        kf.sendChatChecked(msg.to, msg_id)
+                        kg.sendChatChecked(msg.to, msg_id)
+                        kh.sendChatChecked(msg.to, msg_id)
                         sw.sendChatChecked(msg.to, msg_id)
                     if text is None:
                         return
