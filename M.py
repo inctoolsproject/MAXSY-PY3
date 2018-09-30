@@ -3256,15 +3256,15 @@ def bot(op):
                         elif cmd == "respon":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
-                                ki.sendMessage(msg.to,responsename1)
-                                kk.sendMessage(msg.to,responsename2)
-                                kc.sendMessage(msg.to,responsename3)
-                                kb.sendMessage(msg.to,responsename1)
-                                kd.sendMessage(msg.to,responsename2)
-                                ke.sendMessage(msg.to,responsename3)
-                                kf.sendMessage(msg.to,responsename1)
-                                kg.sendMessage(msg.to,responsename2)
-                                kh.sendMessage(msg.to,responsename3)
+                                ki.sendMessage(msg.to, "MAXSY 1")
+                                kk.sendMessage(msg.to, "MAXSY 2")
+                                kc.sendMessage(msg.to, "MAXSY 3")
+                                kb.sendMessage(msg.to, "MAXSY 4")
+                                kd.sendMessage(msg.to, "MAXSY 5")
+                                ke.sendMessage(msg.to, "MAXSY 6")
+                                kf.sendMessage(msg.to, "MAXSY 7")
+                                kg.sendMessage(msg.to, "MAXSY 8")
+                                kh.sendMessage(msg.to, "MAXSY 9")
 
                         elif cmd == "invitebot":
                           if wait["selfbot"] == True:
