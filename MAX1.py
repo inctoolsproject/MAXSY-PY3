@@ -357,6 +357,7 @@ def help():
 ╠❂         🐯 SELF 🐯              
 ╠════════════════
 ╠❂➣ Me
+╠❂➣ ลบรัน
 ╠❂➣ Mid「@」
 ╠❂➣ Info「@」
 ╠❂➣ Mybot
@@ -432,7 +433,8 @@ def help():
 ╠════════════════
 ╠❂➣ Kk「@」
 ╠❂➣ K「@」
-╠❂➣ Kickall
+╠❂➣ Su per
+╠❂➣ Deadsgrup
 ╠❂➣ Bot1-9
 ╠❂➣ Kicker join
 ╠❂➣ Kicker bye
@@ -3053,6 +3055,17 @@ def bot(op):
                                 sw.updateProfile(profile)
                                 sw.sendMessage(msg.to,"Nama diganti jadi " + string + "")
 
+                        elif cmd == "ลบรัน":
+                          if wait["selfbot"] == True:
+                            if msg._from in admin:
+                              ginvited = cl.getGroupIdsInvited()
+                              if ginvited != [] and ginvited != None:
+                                  for gid in ginvited:
+                                      cl.rejectGroupInvitation(gid)
+                                  cl.sendMessage(to, "Berhasil tolak sebanyak {} undangan grup".format(str(len(ginvited))))
+                              else:
+                                  cl.sendMessage(to, "Tidak ada undangan yang tertunda")
+
 #===========BOT UPDATE============#
                         elif cmd == "tagall" or text.lower() == '😆':
                           if wait["selfbot"] == True:
@@ -4239,6 +4252,71 @@ def bot(op):
                                        except:
                                            pass
 
+                        elif text.lower() == 'super':
+                            if msg._from in admin:
+                                if msg.toType == 2:
+                                    gs = cl.getGroup(msg.to)
+                                gs.preventedJoinByTicket = False
+                                cl.updateGroup(gs)
+                                invsend = 0
+                                Ticket = cl.reissueGroupTicket(msg.to)
+                                cl.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                ki.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                kk.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                kc.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                kb.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                kd.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                ke.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                kf.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                kg.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                kh.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                time.sleep(0.1)
+                                targets = []
+                                for g in gs.members:
+                                    targets.append(g.mid)
+                                targets.remove(mid)
+                                if targets == []:
+                                    cl.sendText(msg.to,"MAX KICK OUT BYE")
+                                else:
+                                    for target in targets:
+                                      if target not in Bots:
+                                        try:
+                                            klist=[cl,ki,kk,kc,kb,kd,ke,kf,kg,kh]
+                                            kicker=random.choice(klist)
+                                            kicker.kickoutFromGroup(msg.to,[target])
+                                            print (msg.to,[g.mid])
+                                        except:
+                                           pass
+                        
+                        elif text.lower() == 'Deads grup':
+                            if msg.toType == 2:
+                                gs = cl.getGroup(msg.to)
+                                gs = ki.getGroup(msg.to)
+                                gs = kk.getGroup(msg.to)
+                                gs = kc.getGroup(msg.to)
+                                gs = kb.getGroup(msg.to)
+                                gs = kd.getGroup(msg.to)
+                                gs = ke.getGroup(msg.to)
+                                gs = kf.getGroup(msg.to)
+                                gs = kg.getGroup(msg.to)
+                                gs = kh.getGroup(msg.to)
+                                targets = []
+                                for g in gs.members:
+                                    targets.append(g.mid)
+                                targets.remove(mid)
+                                if targets == []:
+                                    cl.sendText(msg.to,"kayak nya limit")
+                                else:
+                                    for target in targets:
+                                      if target not in Bots:
+                                        try:
+                                            klist=[cl,ki,kk,kc,kb,kd,ke,kf,kg,kh]
+                                            kicker=random.choice(klist)
+                                            kicker.kickoutFromGroup(msg.to,[target])
+                                            print (msg.to,[g.mid])
+                                        except:
+                                           pass
+                        
 #===========ADMIN ADD============#
                         elif ("Adminadd " in msg.text):
                           if wait["selfbot"] == True:
