@@ -112,19 +112,19 @@ welcome = []
 responsename1 = ki.getProfile().displayName
 responsename2 = kk.getProfile().displayName
 responsename3 = kc.getProfile().displayName
-responsename1 = kb.getProfile().displayName
-responsename2 = kd.getProfile().displayName
-responsename3 = ke.getProfile().displayName
-responsename1 = kf.getProfile().displayName
-responsename2 = kg.getProfile().displayName
-responsename3 = kh.getProfile().displayName
+responsename4 = kb.getProfile().displayName
+responsename5 = kd.getProfile().displayName
+responsename6 = ke.getProfile().displayName
+responsename7 = kf.getProfile().displayName
+responsename8 = kg.getProfile().displayName
+responsename9 = kh.getProfile().displayName
 
 settings = {
     "Picture":False,
     "group":{},
     "groupPicture":False,
     "changePicture":False,
-    "autoJoinTicket":True,
+    "autoJoinTicket":False,
     "userAgent": [
         "Mozilla/5.0 (X11; U; Linux i586; de; rv:5.0) Gecko/20100101 Firefox/5.0",
         "Mozilla/5.0 (X11; U; Linux amd64; rv:5.0) Gecko/20100101 Firefox/5.0 (Debian)",
@@ -169,7 +169,7 @@ wait = {
     "Talkdblacklist":False,
     "talkban":True,
     "contact":False,
-    'autoJoin':True,
+    'autoJoin':False,
     'autoAdd':True,
     'autoLeave':False,
     'autoLeave1':False,
@@ -359,8 +359,6 @@ def help():
 ╠❂➣ Me
 ╠❂➣ Mid「@」
 ╠❂➣ Info「@」
-╠❂➣ kk「@」
-╠❂➣ k「@」
 ╠❂➣ Mybot
 ╠❂➣ Status
 ╠❂➣ About
@@ -429,6 +427,18 @@ def help():
 ╠❂➣ Welcome「on/off」
 ╠❂➣ Autoleave「on/off」
 ╠════════════════
+╠❂        🐯 BOTZS 🐯           
+╠════════════════
+╠❂➣ Kk「@」
+╠❂➣ K「@」
+╠❂➣ Kickall
+╠❂➣ Bot1-9
+╠❂➣ Kicker join
+╠❂➣ Kicker bye
+╠❂➣ Bot1-10up「Kirim fotonya」
+╠❂➣ Bot1-9name:「Nama」
+╠❂➣ Invitebot
+╠════════════════
 ╠❂        🐯 ADMIN 🐯           
 ╠════════════════
 ╠❂➣ Admin:on
@@ -487,12 +497,6 @@ def helpbot():
 ╠❂➣ Set respon:「Text」
 ╠❂➣ Set welcome:「Text」
 ╠❂➣ Myname:「Nama」
-╠❂➣ Bot1name:「Nama」
-╠❂➣ Bot2name:「Nama」
-╠❂➣ Bot3name:「Nama」
-╠❂➣ Bot1up「Kirim fotonya」
-╠❂➣ Bot2up「Kirim fotonya」
-╠❂➣ Bot3up「Kirim fotonya」
 ╠❂➣ Gift:「Mid korban」「Jumlah」
 ╠❂➣ Spam:「Mid korban」「Jumlah」
 ╔════════════════
@@ -3270,7 +3274,7 @@ def bot(op):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 try:
-                                    anggota = [Bmid,Cmid,Amid]
+                                    anggota = [Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid]
                                     cl.inviteIntoGroup(msg.to, anggota)
                                     ki.acceptGroupInvitation(msg.to)
                                     kk.acceptGroupInvitation(msg.to)
@@ -3320,7 +3324,7 @@ def bot(op):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 G = cl.getGroup(msg.to)
-                                ki.sendText(msg.to, "Bye bye fams "+str(G.name))
+                                ki.sendText(msg.to, "Good Bye Family "+str(G.name))
                                 ki.leaveGroup(msg.to)
                                 kk.leaveGroup(msg.to)
                                 kc.leaveGroup(msg.to)
@@ -3350,6 +3354,12 @@ def bot(op):
                                         ki.leaveGroup(i)
                                         kk.leaveGroup(i)
                                         kc.leaveGroup(i)
+                                        kb.leaveGroup(i)
+                                        kd.leaveGroup(i)
+                                        ke.leaveGroup(i)
+                                        kf.leaveGroup(i)
+                                        kg.leaveGroup(i)
+                                        kh.leaveGroup(i)
                                         cl.sendMessage(to,"Berhasil keluar dari grup " +h)
 
                         elif cmd == "bot1":
@@ -3391,6 +3401,85 @@ def bot(op):
                                 G.preventedJoinByTicket = True
                                 kc.updateGroup(G)
 
+                        elif cmd == "bot4":
+                            if msg._from in admin:
+                                G = cl.getGroup(msg.to)
+                                ginfo = cl.getGroup(msg.to)
+                                G.preventedJoinByTicket = False
+                                cl.updateGroup(G)
+                                invsend = 0
+                                Ticket = cl.reissueGroupTicket(msg.to)
+                                kb.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                G = kb.getGroup(msg.to)
+                                G.preventedJoinByTicket = True
+                                kb.updateGroup(G)
+
+                        elif cmd == "bot5":
+                            if msg._from in admin:
+                                G = cl.getGroup(msg.to)
+                                ginfo = cl.getGroup(msg.to)
+                                G.preventedJoinByTicket = False
+                                cl.updateGroup(G)
+                                invsend = 0
+                                Ticket = cl.reissueGroupTicket(msg.to)
+                                kd.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                G = kd.getGroup(msg.to)
+                                G.preventedJoinByTicket = True
+                                kd.updateGroup(G)
+
+                        elif cmd == "bot6":
+                            if msg._from in admin:
+                                G = cl.getGroup(msg.to)
+                                ginfo = cl.getGroup(msg.to)
+                                G.preventedJoinByTicket = False
+                                cl.updateGroup(G)
+                                invsend = 0
+                                Ticket = cl.reissueGroupTicket(msg.to)
+                                ke.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                G = ke.getGroup(msg.to)
+                                G.preventedJoinByTicket = True
+                                ke.updateGroup(G)
+
+                        elif cmd == "bot7":
+                            if msg._from in admin:
+                                G = cl.getGroup(msg.to)
+                                ginfo = cl.getGroup(msg.to)
+                                G.preventedJoinByTicket = False
+                                cl.updateGroup(G)
+                                invsend = 0
+                                Ticket = cl.reissueGroupTicket(msg.to)
+                                kf.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                G = kf.getGroup(msg.to)
+                                G.preventedJoinByTicket = True
+                                kf.updateGroup(G)
+
+                        elif cmd == "bot8":
+                            if msg._from in admin:
+                                G = cl.getGroup(msg.to)
+                                ginfo = cl.getGroup(msg.to)
+                                G.preventedJoinByTicket = False
+                                cl.updateGroup(G)
+                                invsend = 0
+                                Ticket = cl.reissueGroupTicket(msg.to)
+                                kg.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                G = kg.getGroup(msg.to)
+                                G.preventedJoinByTicket = True
+                                kg.updateGroup(G)
+
+                        elif cmd == "bot9":
+                            if msg._from in admin:
+                                G = cl.getGroup(msg.to)
+                                ginfo = cl.getGroup(msg.to)
+                                G.preventedJoinByTicket = False
+                                cl.updateGroup(G)
+                                invsend = 0
+                                Ticket = cl.reissueGroupTicket(msg.to)
+                                kh.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                G = kh.getGroup(msg.to)
+                                G.preventedJoinByTicket = True
+                                kh.updateGroup(G)
+
+                        
                         elif cmd == "kicker join":
                             if msg._from in admin:
                                 G = cl.getGroup(msg.to)
@@ -3421,7 +3510,7 @@ def bot(op):
                                 get_contact_time_start = time.time()
                                 get_contact = cl.getContact(mid)
                                 get_contact_time = time.time() - get_contact_time_start
-                                cl.sendMessage(msg.to, "⏩MAX Speed respon\n\n - Get Profile\n   %.10f\n - Get Contact\n   %.10f\n - Get Group\n   %.10f" % (get_profile_time/3,get_contact_time/3,get_group_time/3))
+                                cl.sendMessage(msg.to, "😈 Bot Speed respon\n\n - Get Profile\n   %.10f\n - Get Contact\n   %.10f\n - Get Group\n   %.10f" % (get_profile_time/3,get_contact_time/3,get_group_time/3))
 
                         elif cmd == "speed" or cmd == "sp":
                           if wait["selfbot"] == True:
