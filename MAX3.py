@@ -405,6 +405,10 @@ def help():
 ╠❂➣ Spamtag「@」
 ╠❂➣ Spamcall:「jumlahnya」
 ╠❂➣ Spamcall
+╠❂➣ Stealname「@」
+╠❂➣ Stealbio「@」
+╠❂➣ Stealcover「@」
+╠❂➣ Stealpictrue「@」
 ╠════════════════
 ╠❂      🐯 PROTECT 🐯        
 ╠════════════════
@@ -441,6 +445,9 @@ def help():
 ╠❂➣ Bot1-10up「Kirim fotonya」
 ╠❂➣ Bot1-9name:「Nama」
 ╠❂➣ Invitebot
+╠❂➣ Botcancel
+╠❂➣ Cancel
+╠❂➣ fuck@sirichan
 ╠════════════════
 ╠❂        🐯 ADMIN 🐯           
 ╠════════════════
@@ -2639,6 +2646,63 @@ def bot(op):
                                except:
                                    pass
 
+                        elif cmd.startswith("stealname "):
+                          if msg._from in admin:
+                              if 'MENTION' in msg.contentMetadata.keys()!= None:
+                                  names = re.findall(r'@(\w+)', text)
+                                  mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                                  mentionees = mention['MENTIONEES']
+                                  lists = []
+                                  for mention in mentionees:
+                                      if mention["M"] not in lists:
+                                          lists.append(mention["M"])
+                                  for ls in lists:
+                                      contact = cl.getContact(ls)
+                                      cl.sendMessage(msg.to, "[ Display Name ]\n" + contact.displayName)
+
+                        elif cmd.startswith("stealbio "):
+                            if msg._from in admin:
+                              if 'MENTION' in msg.contentMetadata.keys()!= None:
+                                  names = re.findall(r'@(\w+)', text)
+                                  mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                                  mentionees = mention['MENTIONEES']
+                                  lists = []
+                                  for mention in mentionees:
+                                      if mention["M"] not in lists:
+                                          lists.append(mention["M"])
+                                  for ls in lists:
+                                      contact = cl.getContact(ls)
+                                      cl.sendMessage(msg.to, "[ Status Message ]\n{}" + contact.statusMessage)
+
+                        elif cmd.startswith("stealpicture "):
+                            if msg._from in admin:
+                                if 'MENTION' in msg.contentMetadata.keys()!= None:
+                                    names = re.findall(r'@(\w+)', text)
+                                    mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                                    mentionees = mention['MENTIONEES']
+                                    lists = []
+                                    for mention in mentionees:
+                                        if mention["M"] not in lists:
+                                            lists.append(mention["M"])
+                                    for ls in lists:
+                                        path = "http://dl.profile.line-cdn.net/" + cl.getContact(ls).pictureStatus
+                                        cl.sendImageWithURL(msg.to, str(path))
+
+                        elif cmd.startswith("stealcover "):
+                            if msg._from in admin:
+                                if line != None:
+                                    if 'MENTION' in msg.contentMetadata.keys()!= None:
+                                        names = re.findall(r'@(\w+)', text)
+                                        mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                                        mentionees = mention['MENTIONEES']
+                                        lists = []
+                                        for mention in mentionees:
+                                            if mention["M"] not in lists:
+                                                lists.append(mention["M"])
+                                        for ls in lists:
+                                            path = cl.getProfileCoverURL(ls)
+                                            cl.sendImageWithURL(msg.to, str(path))
+
                         elif cmd.startswith("broadcast: "):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
@@ -4288,6 +4352,29 @@ def bot(op):
                                         except:
                                            pass
                         
+                        elif text.lower() == 'fuck@sirichan':
+                            if msg._from in admin:
+                                gs = cl.getGroup(msg.to)
+                            gs = cl.getGroup(msg.to)
+                            gs = ki.getGroup(msg.to)
+                            gs = kk.getGroup(msg.to)
+                            gs = kc.getGroup(msg.to)
+                            gs = kb.getGroup(msg.to)
+                            gs = kd.getGroup(msg.to)
+                            gs = ke.getGroup(msg.to)
+                            gs = kf.getGroup(msg.to)
+                            gs = kg.getGroup(msg.to)
+                            gs = kh.getGroup(msg.to)
+                            sirilist = [i.mid for i in gs.members if any(word in i.displayName for word in ["Doctor.A","Eliza","Parry","Rakko","しりちゃん","0","1","2","3","4","5","6","7","8","9"])]
+                            if sirilist != []:
+                                groupParam = msg.to
+                                try:
+                                    p = Pool(40)
+                                    p.map(SiriGetOut,sirilist)
+                                    p.close()
+                                except:
+                                    p.close()
+                        
                         elif text.lower() == 'Deads grup':
                             if msg.toType == 2:
                                 gs = cl.getGroup(msg.to)
@@ -4317,6 +4404,31 @@ def bot(op):
                                         except:
                                            pass
                         
+                        elif msg.text in ['cancel']:
+                            if msg.toType == 2:
+                                if msg._from in admin:
+                                group = cl.getGroup(msg.to)
+                            gMembMids = [contact.mid for contact in group.invitee]
+                            for _mid in gMembMids:
+                                    cl.cancelGroupInvitation(msg.to,[_mid])
+
+                        elif msg.text in ["Botcancel"]:
+                            if msg._from in admin:
+                                gid = cl.getGroupIdsInvited()
+                                for i in gid:
+                                    ki.rejectGroupInvitation(i)
+                                    kk.rejectGroupInvitation(i)
+                                    kc.rejectGroupInvitation(i)
+                                    kb.rejectGroupInvitation(i)
+                                    kd.rejectGroupInvitation(i)
+                                    ke.rejectGroupInvitation(i)
+                                    kf.rejectGroupInvitation(i)
+                                    kg.rejectGroupInvitation(i)
+                                    kh.rejectGroupInvitation(i)
+                            if wait["lang"] == "JP":
+                                ki.sendText(msg.to,"Success menolak semua undangan")
+                            else:
+                                ki.sendText(msg.to,"He declined all invitations")
 #===========ADMIN ADD============#
                         elif ("Adminadd " in msg.text):
                           if wait["selfbot"] == True:
