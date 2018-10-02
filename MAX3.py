@@ -885,6 +885,7 @@ def bot(op):
                     if (wait["message"] in [" "," ","\n",None]):
                         pass
                     else:
+                        sendMention(op.param1, op.param1, "Haii ", ", terimakasih sudah add saya")
                         cl.sendText(op.param1, wait["message"])
                         cl.sendContact(op.param1, "ub8fd0c502d6d52c35d8bc6fcced407d0")
 
