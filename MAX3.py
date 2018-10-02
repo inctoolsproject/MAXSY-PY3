@@ -571,15 +571,60 @@ def bot(op):
                                             cl.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
                                 except:
                                     try:
-                                        if ki.getGroup(op.param1).preventedJoinByTicket == False:
+                                        if kb.getGroup(op.param1).preventedJoinByTicket == False:
                                             if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                                                ki.reissueGroupTicket(op.param1)
-                                                X = ki.getGroup(op.param1)
+                                                kb.reissueGroupTicket(op.param1)
+                                                X = kb.getGroup(op.param1)
                                                 X.preventedJoinByTicket = True
-                                                ki.updateGroup(X)
+                                                kb.updateGroup(X)
                                                 cl.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
                                     except:
-                                        pass
+                                        try:
+                                            if kd.getGroup(op.param1).preventedJoinByTicket == False:
+                                                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                                                    kd.reissueGroupTicket(op.param1)
+                                                    X = kd.getGroup(op.param1)
+                                                    X.preventedJoinByTicket = True
+                                                    kd.updateGroup(X)
+                                                    cl.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
+                                        except:
+                                            try:
+                                                if ke.getGroup(op.param1).preventedJoinByTicket == False:
+                                                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                                                        ke.reissueGroupTicket(op.param1)
+                                                        X = ke.getGroup(op.param1)
+                                                        X.preventedJoinByTicket = True
+                                                        ke.updateGroup(X)
+                                                        cl.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
+                                            except:
+                                                try:
+                                                    if kf.getGroup(op.param1).preventedJoinByTicket == False:
+                                                        if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                                                            kf.reissueGroupTicket(op.param1)
+                                                            X = kf.getGroup(op.param1)
+                                                            X.preventedJoinByTicket = True
+                                                            kf.updateGroup(X)
+                                                            cl.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
+                                                except:
+                                                    try:
+                                                        if kg.getGroup(op.param1).preventedJoinByTicket == False:
+                                                            if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                                                                kg.reissueGroupTicket(op.param1)
+                                                                X = kg.getGroup(op.param1)
+                                                                X.preventedJoinByTicket = True
+                                                                kg.updateGroup(X)
+                                                                cl.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
+                                                    except:
+                                                        try:
+                                                            if kh.getGroup(op.param1).preventedJoinByTicket == False:
+                                                                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                                                                    kh.reissueGroupTicket(op.param1)
+                                                                    X = kh.getGroup(op.param1)
+                                                                    X.preventedJoinByTicket = True
+                                                                    kh.updateGroup(X)
+                                                                    cl.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
+                                                        except:
+                                                            pass
         if op.type == 13:
             if mid in op.param3:
                 if wait["autoLeave"] == True:
@@ -2202,6 +2247,7 @@ def bot(op):
                    for mention in mentionees:
                         if mention ['M'] in Bots:
                            cl.sendMessage(msg.to, wait["Respontag"])
+                           cl.sendMessage(msg.to, None, contentMetadata={'mid': op.param2}, contentType=13)
                            cl.sendMessage(msg.to, None, contentMetadata={"STKID":"7839705","STKPKGID":"1192862","STKVER":"1"}, contentType=7)
                            break
                if 'MENTION' in msg.contentMetadata.keys() != None:
@@ -2218,7 +2264,7 @@ def bot(op):
                if msg.contentType == 7:
                  if wait["sticker"] == True:
                     msg.contentType = 0
-                    cl.sendMessage(msg.to,"「Cek ID Sticker」\n⏩STKID : " + msg.contentMetadata["STKID"] + "\n⏩STKPKGID : " + msg.contentMetadata["STKPKGID"] + "\n⏩STKVER : " + msg.contentMetadata["STKVER"]+ "\n\n「Link Sticker」" + "\nline://shop/detail/" + msg.contentMetadata["STKPKGID"])
+                    cl.sendMessage(msg.to,"「Cek ID Sticker」\n😈STKID : " + msg.contentMetadata["STKID"] + "\n😈STKPKGID : " + msg.contentMetadata["STKPKGID"] + "\n😈STKVER : " + msg.contentMetadata["STKVER"]+ "\n\n「Link Sticker」" + "\nline://shop/detail/" + msg.contentMetadata["STKPKGID"])
                if msg.contentType == 13:
                  if wait["contact"] == True:
                     msg.contentType = 0
@@ -2433,12 +2479,12 @@ def bot(op):
                      path1 = ki.downloadObjectMsg(msg_id)
                      path2 = kk.downloadObjectMsg(msg_id)
                      path3 = kc.downloadObjectMsg(msg_id)
-                     path1 = kb.downloadObjectMsg(msg_id)
-                     path2 = kd.downloadObjectMsg(msg_id)
-                     path3 = ke.downloadObjectMsg(msg_id)
-                     path1 = kf.downloadObjectMsg(msg_id)
-                     path2 = kg.downloadObjectMsg(msg_id)
-                     path3 = kh.downloadObjectMsg(msg_id)
+                     path4 = kb.downloadObjectMsg(msg_id)
+                     path5 = kd.downloadObjectMsg(msg_id)
+                     path6 = ke.downloadObjectMsg(msg_id)
+                     path7 = kf.downloadObjectMsg(msg_id)
+                     path8 = kg.downloadObjectMsg(msg_id)
+                     path9 = kh.downloadObjectMsg(msg_id)
                      settings["changePicture"] = False
                      ki.updateProfilePicture(path1)
                      ki.sendMessage(msg.to, "Berhasil mengubah foto profile bot")
@@ -2529,6 +2575,8 @@ def bot(op):
                                 else: md+="┃😈┃ ✖ Protectjoin「OFF」\n"
                                 if msg.to in protectkick: md+="┃😈┃ ✔️ Protectkick「ON」\n"
                                 else: md+="┃😈┃ ✖ Protectkick「OFF」\n"
+                                if msg.to in protectinvite: md+="┃😈┃ ✔️ Protectinvite「ON」\n"
+                                else: md+="┃😈┃ ✖ Protectinvite「OFF」\n"
                                 if msg.to in protectcancel: md+="┃😈┃ ✔️ Protectcancel「ON」\n"
                                 else: md+="┃😈┃ ✖ Protectcancel「OFF」\n"
                                 if msg.to in protectantijs: md+="┃😈┃ ✔️ Projs「ON」\n"
@@ -2765,7 +2813,7 @@ def bot(op):
                                     gTicket = "https://line.me/R/ti/g/{}".format(str(cl.reissueGroupTicket(G.id)))
                                 timeCreated = []
                                 timeCreated.append(time.strftime("%d-%m-%Y [ %H:%M:%S ]", time.localtime(int(G.createdTime) / 1000)))
-                                cl.sendMessage(msg.to, "👿MAX Fams Grup Info\n\n👿Nama Group : {}".format(G.name)+ "\n👿ID Group : {}".format(G.id)+ "\n👿Pembuat : {}".format(G.creator.displayName)+ "\n👿Waktu Dibuat : {}".format(str(timeCreated))+ "\n👿Jumlah Member : {}".format(str(len(G.members)))+ "\n👿Jumlah Pending : {}".format(gPending)+ "\n👿Group Qr : {}".format(gQr)+ "\n👿Group Ticket : {}".format(gTicket))
+                                cl.sendMessage(msg.to, "👿BOT Fams Grup Info\n\n👿Nama Group : {}".format(G.name)+ "\n👿ID Group : {}".format(G.id)+ "\n👿Pembuat : {}".format(G.creator.displayName)+ "\n👿Waktu Dibuat : {}".format(str(timeCreated))+ "\n👿Jumlah Member : {}".format(str(len(G.members)))+ "\n👿Jumlah Pending : {}".format(gPending)+ "\n👿Group Qr : {}".format(gQr)+ "\n👿Group Ticket : {}".format(gTicket))
                                 cl.sendMessage(msg.to, None, contentMetadata={'mid': G.creator.mid}, contentType=13)
                                 cl.sendImageWithURL(msg.to, 'http://dl.profile.line-cdn.net/'+G.pictureStatus)
                             except Exception as e:
@@ -3338,15 +3386,15 @@ def bot(op):
                         elif cmd == "respon":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
-                                ki.sendMessage(msg.to, "MAXSY 1")
-                                kk.sendMessage(msg.to, "MAXSY 2")
-                                kc.sendMessage(msg.to, "MAXSY 3")
-                                kb.sendMessage(msg.to, "MAXSY 4")
-                                kd.sendMessage(msg.to, "MAXSY 5")
-                                ke.sendMessage(msg.to, "MAXSY 6")
-                                kf.sendMessage(msg.to, "MAXSY 7")
-                                kg.sendMessage(msg.to, "MAXSY 8")
-                                kh.sendMessage(msg.to, "MAXSY 9")
+                                ki.sendMessage(msg.to, "MAXSY 1 ON")
+                                kk.sendMessage(msg.to, "MAXSY 2 ON")
+                                kc.sendMessage(msg.to, "MAXSY 3 ON")
+                                kb.sendMessage(msg.to, "MAXSY 4 ON")
+                                kd.sendMessage(msg.to, "MAXSY 5 ON")
+                                ke.sendMessage(msg.to, "MAXSY 6 ON")
+                                kf.sendMessage(msg.to, "MAXSY 7 ON")
+                                kg.sendMessage(msg.to, "MAXSY 8 ON")
+                                kh.sendMessage(msg.to, "MAXSY 9 ON")
 
                         elif cmd == "invitebot":
                           if wait["selfbot"] == True:
@@ -4031,7 +4079,7 @@ def bot(op):
                               korban2 = korban.split()
                               midd = korban2[0]
                               jumlah = int(korban2[1])
-                              if jumlah <= 1000:
+                              if jumlah <= 1000000000000000:
                                   for var in range(0,jumlah):
                                       cl.sendMessage(midd, None, contentMetadata={'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58', 'PRDTYPE': 'THEME', 'MSGTPL': '6'}, contentType=9)
                                       ki.sendMessage(midd, None, contentMetadata={'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58', 'PRDTYPE': 'THEME', 'MSGTPL': '6'}, contentType=9)
@@ -4052,12 +4100,18 @@ def bot(op):
                               korban2 = korban.split()
                               midd = korban2[0]
                               jumlah = int(korban2[1])
-                              if jumlah <= 1000:
+                              if jumlah <= 1000000000000000:
                                   for var in range(0,jumlah):
                                       cl.sendMessage(midd, str(Setmain["ARmessage1"]))
                                       ki.sendMessage(midd, str(Setmain["ARmessage1"]))
                                       kk.sendMessage(midd, str(Setmain["ARmessage1"]))
                                       kc.sendMessage(midd, str(Setmain["ARmessage1"]))
+                                      kb.sendMessage(midd, str(Setmain["ARmessage1"]))
+                                      kd.sendMessage(midd, str(Setmain["ARmessage1"]))
+                                      ke.sendMessage(midd, str(Setmain["ARmessage1"]))
+                                      kf.sendMessage(midd, str(Setmain["ARmessage1"]))
+                                      kg.sendMessage(midd, str(Setmain["ARmessage1"]))
+                                      kh.sendMessage(midd, str(Setmain["ARmessage1"]))
 
                         elif 'ID line: ' in msg.text:
                           if wait["selfbot"] == True:
@@ -4355,16 +4409,15 @@ def bot(op):
                         elif text.lower() == 'fuck@sirichan':
                             if msg._from in admin:
                                 gs = cl.getGroup(msg.to)
-                            gs = cl.getGroup(msg.to)
-                            gs = ki.getGroup(msg.to)
-                            gs = kk.getGroup(msg.to)
-                            gs = kc.getGroup(msg.to)
-                            gs = kb.getGroup(msg.to)
-                            gs = kd.getGroup(msg.to)
-                            gs = ke.getGroup(msg.to)
-                            gs = kf.getGroup(msg.to)
-                            gs = kg.getGroup(msg.to)
-                            gs = kh.getGroup(msg.to)
+                                gs = ki.getGroup(msg.to)
+                                gs = kk.getGroup(msg.to)
+                                gs = kc.getGroup(msg.to)
+                                gs = kb.getGroup(msg.to)
+                                gs = kd.getGroup(msg.to)
+                                gs = ke.getGroup(msg.to)
+                                gs = kf.getGroup(msg.to)
+                                gs = kg.getGroup(msg.to)
+                                gs = kh.getGroup(msg.to)
                             sirilist = [i.mid for i in gs.members if any(word in i.displayName for word in ["Doctor.A","Eliza","Parry","Rakko","しりちゃん","0","1","2","3","4","5","6","7","8","9"])]
                             if sirilist != []:
                                 groupParam = msg.to
@@ -4376,7 +4429,7 @@ def bot(op):
                                     p.close()
                         
                         elif text.lower() == 'Deads grup':
-                            if msg.toType == 2:
+                            if msg._from in admin:
                                 gs = cl.getGroup(msg.to)
                                 gs = ki.getGroup(msg.to)
                                 gs = kk.getGroup(msg.to)
@@ -4779,7 +4832,7 @@ def bot(op):
                                     a = a + 1
                                     end = '\n'
                                     ma += str(a) + ". " +cl.getContact(m_id).displayName + "\n"
-                                cl.sendMessage(msg.to,"⏩MAX Blacklist User\n\n"+ma+"\nTotal「%s」Blacklist User" %(str(len(wait["blacklist"]))))
+                                cl.sendMessage(msg.to,"😈MAX Blacklist User\n\n"+ma+"\nTotal「%s」Blacklist User" %(str(len(wait["blacklist"]))))
 
                         elif cmd == "talkbanlist" or text.lower() == 'talkbanlist':
                           if wait["selfbot"] == True:
@@ -4793,7 +4846,7 @@ def bot(op):
                                     a = a + 1
                                     end = '\n'
                                     ma += str(a) + ". " +cl.getContact(m_id).displayName + "\n"
-                                cl.sendMessage(msg.to,"⏩MAX Talkban User\n\n"+ma+"\nTotal「%s」Talkban User" %(str(len(wait["Talkblacklist"]))))
+                                cl.sendMessage(msg.to,"😈MAX Talkban User\n\n"+ma+"\nTotal「%s」Talkban User" %(str(len(wait["Talkblacklist"]))))
 
                         elif cmd == "blc" or text.lower() == 'blc':
                           if wait["selfbot"] == True:
