@@ -12,67 +12,67 @@ from googletrans import Translator
 import youtube_dl
 
 cl = LineClient()
-#cl = LineClient(authToken='EwyXwTEbrfGokoS2Y4v8.sgl/sXGRl9guOXcolZzI6a.PABzl7j4CubRpzzxk5scU1NlRnj2xOGnwM5c/CGFZt8=')
+#cl = LineClient(authToken='')
 cl.log("Auth Token : " + str(cl.authToken))
 #channel = LineChannel(cl)
 #cl.log("Channel Access Token : " + str(channel.channelAccessToken))
 
 ki = LineClient()
-#ki = LineClient(authToken='EwZPEfP04NyvrkwvT5j6.ciAODWIOJBp4UC40YB2aPG.AFkJbxee/KyH9wm9P14BPL1ntHFzmSHu9+fvgxeBPEg=')
+#ki = LineClient(authToken='')
 ki.log("Auth Token : " + str(ki.authToken))
 #channel1 = LineChannel(ki)
 #ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
 
 kk = LineClient()
-#kk = LineClient(authToken='EwYRdytxSIqQYb1FuAN6.WKcub2t+uJueUYfdC1qAbG.kcuE5u3klvfwd1IYM+zs5xkxbo3+pIsLrjZ/Um1ti5U=')
+#kk = LineClient(authToken='')
 kk.log("Auth Token : " + str(kk.authToken))
 #channel2 = LineChannel(kk)
 #kk.log("Channel Access Token : " + str(channel2.channelAccessToken))
 
 kc = LineClient()
-#kc = LineClient(authToken='EwzQfNY5yaHg3Rs3OIy9.WrtAVyZDRBvprHExwvnXkq.5lj592fbau7e3dxelya1Ih8v9FHQpCe09CU7Jrf66xU=')
+#kc = LineClient(authToken='')
 kc.log("Auth Token : " + str(kc.authToken))
 #channel3 = LineChannel(kc)
 #kc.log("Channel Access Token : " + str(channel3.channelAccessToken))
 
 kb = LineClient()
-#kb = LineClient(authToken='EwzQfNY5yaHg3Rs3OIy9.WrtAVyZDRBvprHExwvnXkq.5lj592fbau7e3dxelya1Ih8v9FHQpCe09CU7Jrf66xU=')
+#kb = LineClient(authToken='')
 kb.log("Auth Token : " + str(kb.authToken))
 #channel3 = LineChannel(kb)
 #kb.log("Channel Access Token : " + str(channel3.channelAccessToken))
 
 kd = LineClient()
-#kd = LineClient(authToken='EwzQfNY5yaHg3Rs3OIy9.WrtAVyZDRBvprHExwvnXkq.5lj592fbau7e3dxelya1Ih8v9FHQpCe09CU7Jrf66xU=')
+#kd = LineClient(authToken='')
 kd.log("Auth Token : " + str(kd.authToken))
 #channel3 = LineChannel(kd)
 #kd.log("Channel Access Token : " + str(channel3.channelAccessToken))
 
 ke = LineClient()
-#ke = LineClient(authToken='EwzQfNY5yaHg3Rs3OIy9.WrtAVyZDRBvprHExwvnXkq.5lj592fbau7e3dxelya1Ih8v9FHQpCe09CU7Jrf66xU=')
+#ke = LineClient(authToken='')
 ke.log("Auth Token : " + str(ke.authToken))
 #channel3 = LineChannel(ke)
 #ke.log("Channel Access Token : " + str(channel3.channelAccessToken))
 
 kf = LineClient()
-#kf = LineClient(authToken='EwzQfNY5yaHg3Rs3OIy9.WrtAVyZDRBvprHExwvnXkq.5lj592fbau7e3dxelya1Ih8v9FHQpCe09CU7Jrf66xU=')
+#kf = LineClient(authToken='')
 kf.log("Auth Token : " + str(kf.authToken))
 #channel3 = LineChannel(kf)
 #kf.log("Channel Access Token : " + str(channel3.channelAccessToken))
 
 kg = LineClient()
-#kg = LineClient(authToken='EwzQfNY5yaHg3Rs3OIy9.WrtAVyZDRBvprHExwvnXkq.5lj592fbau7e3dxelya1Ih8v9FHQpCe09CU7Jrf66xU=')
+#kg = LineClient(authToken='')
 kg.log("Auth Token : " + str(kg.authToken))
 #channel3 = LineChannel(kg)
 #kg.log("Channel Access Token : " + str(channel3.channelAccessToken))
 
 kh = LineClient()
-#kh = LineClient(authToken='EwzQfNY5yaHg3Rs3OIy9.WrtAVyZDRBvprHExwvnXkq.5lj592fbau7e3dxelya1Ih8v9FHQpCe09CU7Jrf66xU=')
+#kh = LineClient(authToken='')
 kh.log("Auth Token : " + str(kh.authToken))
 #channel3 = LineChannel(kh)
 #kh.log("Channel Access Token : " + str(channel3.channelAccessToken))
 
 sw = LineClient()
-#sw = LineClient(authToken='EwPYN0FSJU0JDHi4hWl6.uEr21FsOaeuLSWAmhT6MLG.GUW49h6Z9j04PmS0EyEtIqOAFQkTkAwAcJ/DRgND10M=')
+#sw = LineClient(authToken='')
 sw.log("Auth Token : " + str(sw.authToken))
 #channel11 = LineChannel(sw)
 #sw.log("Channel Access Token : " + str(channel11.channelAccessToken))
@@ -4882,7 +4882,7 @@ def bot(op):
 #===========JOIN TICKET============#
                         elif "/ti/g/" in msg.text.lower():
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                           # if msg._from in admin:
                               if settings["autoJoinTicket"] == True:
                                  link_re = re.compile('(?:line\:\/|line\.me\/R)\/ti\/g\/([a-zA-Z0-9_-]+)?')
                                  links = link_re.findall(text)
