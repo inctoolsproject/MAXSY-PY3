@@ -445,7 +445,7 @@ def help():
 ╠❂➣ Bot1-10up「Kirim fotonya」
 ╠❂➣ Bot1-9name:「Nama」
 ╠❂➣ Invitebot
-╠❂➣ Botcancel
+╠❂➣ Gcancel
 ╠❂➣ fuck@sirichan
 ╠════════════════
 ╠❂        🐯 ADMIN 🐯           
@@ -4456,10 +4456,11 @@ def bot(op):
                                         except:
                                            pass
                         
-                        elif msg.text in ["Botcancel"]:
+                        elif msg.text in ["Gcancel"]:
                             if msg._from in admin:
                                 gid = cl.getGroupIdsInvited()
                                 for i in gid:
+                                    cl.rejectGroupInvitation(i)
                                     ki.rejectGroupInvitation(i)
                                     kk.rejectGroupInvitation(i)
                                     kc.rejectGroupInvitation(i)
