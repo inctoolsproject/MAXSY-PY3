@@ -446,7 +446,6 @@ def help():
 ╠❂➣ Bot1-9name:「Nama」
 ╠❂➣ Invitebot
 ╠❂➣ Botcancel
-╠❂➣ Cancel
 ╠❂➣ fuck@sirichan
 ╠════════════════
 ╠❂        🐯 ADMIN 🐯           
@@ -4458,14 +4457,6 @@ def bot(op):
                                         except:
                                            pass
                         
-                        elif msg.text in ['cancel']:
-                            if msg.toType == 2:
-                                if msg._from in admin:
-                                group = cl.getGroup(msg.to)
-                            gMembMids = [contact.mid for contact in group.invitee]
-                            for _mid in gMembMids:
-                                    cl.cancelGroupInvitation(msg.to,[_mid])
-
                         elif msg.text in ["Botcancel"]:
                             if msg._from in admin:
                                 gid = cl.getGroupIdsInvited()
