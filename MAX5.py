@@ -884,7 +884,6 @@ def bot(op):
                     if (wait["message"] in [" "," ","\n",None]):
                         pass
                     else:
-                        sendMention(op.param1, op.param1, "Haii ", ", terimakasih sudah add saya")
                         cl.sendText(op.param1, wait["message"])
                         cl.sendContact(op.param1, "ub8fd0c502d6d52c35d8bc6fcced407d0")
 
@@ -2246,8 +2245,8 @@ def bot(op):
                    mentionees = mention['MENTIONEES']
                    for mention in mentionees:
                         if mention ['M'] in Bots:
+                           cl.mentiontag(msg.to,[msg._from])
                            cl.sendMessage(msg.to, wait["Respontag"])
-                           cl.sendMessage(msg.to, None, contentMetadata={'mid': op.param2}, contentType=13)
                            cl.sendMessage(msg.to, None, contentMetadata={"STKID":"7839705","STKPKGID":"1192862","STKVER":"1"}, contentType=7)
                            break
                if 'MENTION' in msg.contentMetadata.keys() != None:
