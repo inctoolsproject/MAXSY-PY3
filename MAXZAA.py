@@ -1636,7 +1636,7 @@ def bot(op):
                         cmd = command(text)
                         if cmd == "help":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            #if msg._from in admin:
                                helpMessage = help()
                                cl.sendMessage(msg.to, str(helpMessage))
                                cl.sendContact(to, "ub8fd0c502d6d52c35d8bc6fcced407d0")
@@ -1714,7 +1714,7 @@ def bot(op):
 
                         elif cmd == "me" or text.lower() == 'me':
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            #if msg._from in admin:
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': mid}
                                cl.sendMessage1(msg)
@@ -2608,7 +2608,7 @@ def bot(op):
 
                         elif cmd == "speedbot" or cmd == "spb":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            #if msg._from in admin:
                                start = time.time()
                                ki.sendMessage(msg.to, "Progres speed...")
                                elapsed_time = time.time() - start
