@@ -3385,15 +3385,15 @@ def bot(op):
                         elif cmd == "respon":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
-                                ki.sendMessage(msg.to, "MAXSY 1 ON")
-                                kk.sendMessage(msg.to, "MAXSY 2 ON")
-                                kc.sendMessage(msg.to, "MAXSY 3 ON")
-                                kb.sendMessage(msg.to, "MAXSY 4 ON")
-                                kd.sendMessage(msg.to, "MAXSY 5 ON")
-                                ke.sendMessage(msg.to, "MAXSY 6 ON")
-                                kf.sendMessage(msg.to, "MAXSY 7 ON")
-                                kg.sendMessage(msg.to, "MAXSY 8 ON")
-                                kh.sendMessage(msg.to, "MAXSY 9 ON")
+                                ki.sendMessage(msg.to, "เมียคนที่ 1 อยู่")
+                                kk.sendMessage(msg.to, "เมียคนที่ 2 อยู่")
+                                kc.sendMessage(msg.to, "เมียคนที่ 3 อยู่")
+                                kb.sendMessage(msg.to, "เมียคนที่ 4 อยู่")
+                                kd.sendMessage(msg.to, "เมียคนที่ 5 อยู่")
+                                ke.sendMessage(msg.to, "เมียคนที่ 6 อยู่")
+                                kf.sendMessage(msg.to, "เมียคนที่ 7 อยู่")
+                                kg.sendMessage(msg.to, "เมียคนที่ 8 อยู่")
+                                kh.sendMessage(msg.to, "เมียคนที่ 9 อยู่")
 
                         elif cmd == "invitebot":
                           if wait["selfbot"] == True:
@@ -4461,19 +4461,10 @@ def bot(op):
                                 gid = cl.getGroupIdsInvited()
                                 for i in gid:
                                     cl.rejectGroupInvitation(i)
-                                    ki.rejectGroupInvitation(i)
-                                    kk.rejectGroupInvitation(i)
-                                    kc.rejectGroupInvitation(i)
-                                    kb.rejectGroupInvitation(i)
-                                    kd.rejectGroupInvitation(i)
-                                    ke.rejectGroupInvitation(i)
-                                    kf.rejectGroupInvitation(i)
-                                    kg.rejectGroupInvitation(i)
-                                    kh.rejectGroupInvitation(i)
                             if wait["lang"] == "JP":
-                                ki.sendText(msg.to,"Success menolak semua undangan")
+                                cl.sendText(msg.to,"Success menolak semua undangan")
                             else:
-                                ki.sendText(msg.to,"He declined all invitations")
+                                cl.sendText(msg.to,"He declined all invitations")
 #===========ADMIN ADD============#
                         elif ("Adminadd " in msg.text):
                           if wait["selfbot"] == True:
