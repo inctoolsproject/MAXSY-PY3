@@ -109,15 +109,16 @@ ghost = []
 
 welcome = []
 
-responsename1 = ki.getProfile().displayName
-responsename2 = kk.getProfile().displayName
-responsename3 = kc.getProfile().displayName
-responsename4 = kb.getProfile().displayName
-responsename5 = kd.getProfile().displayName
-responsename6 = ke.getProfile().displayName
-responsename7 = kf.getProfile().displayName
-responsename8 = kg.getProfile().displayName
-responsename9 = kh.getProfile().displayName
+responsename1 = cl.getProfile().displayName
+responsename2 = ki.getProfile().displayName
+responsename3 = kk.getProfile().displayName
+responsename4 = kc.getProfile().displayName
+responsename5 = kb.getProfile().displayName
+responsename6 = kd.getProfile().displayName
+responsename7 = ke.getProfile().displayName
+responsename8 = kf.getProfile().displayName
+responsename9 = kg.getProfile().displayName
+responsename10 = kh.getProfile().displayName
 
 settings = {
     "Picture":False,
@@ -445,8 +446,6 @@ def help():
 ╠❂➣ Bot1-10up「Kirim fotonya」
 ╠❂➣ Bot1-9name:「Nama」
 ╠❂➣ Invitebot
-╠❂➣ Gcancel
-╠❂➣ fuck@sirichan
 ╠════════════════
 ╠❂        🐯 ADMIN 🐯           
 ╠════════════════
@@ -880,12 +879,17 @@ def bot(op):
             return
         if op.type == 5:
             if wait["autoAdd"] == True:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                if op.param2 not in Bots and op.param2 not in admin:
                     if (wait["message"] in [" "," ","\n",None]):
                         pass
                     else:
-                        cl.sendText(op.param1, wait["message"])
+                        cl.sendMessage(op.param1, wait["message"])
                         cl.sendContact(op.param1, "ub8fd0c502d6d52c35d8bc6fcced407d0")
+
+        if op.type == 5:
+            print ("[ 5 ] NOTIFIED AUTO BLOCK CONTACT")
+            if wait["autoBlock"] == True:
+                cl.blockContact(op.param1)
 
         if op.type == 19:
             if op.param1 in protectkick:
@@ -2245,9 +2249,9 @@ def bot(op):
                    mentionees = mention['MENTIONEES']
                    for mention in mentionees:
                         if mention ['M'] in Bots:
-                           cl.mentiontag(msg.to,[msg._from])
-                           cl.sendMessage(msg.to, wait["Respontag"])
-                           cl.sendMessage(msg.to, None, contentMetadata={"STKID":"7839705","STKPKGID":"1192862","STKVER":"1"}, contentType=7)
+                           saints = cl.getContact(msg._from)
+                           sendMention1(msg.to, saints.mid, "", wait["Respontag"])
+                           cl.sendMessage(msg.to, None, contentMetadata={"STKID":"52002769","STKPKGID":"11537","STKVER":"1"}, contentType=7)
                            break
                if 'MENTION' in msg.contentMetadata.keys() != None:
                  if wait["Mentionkick"] == True:
